@@ -1,0 +1,43 @@
+conn = sqlite3.connect('database.db')
+cursor = conn.cursor()
+
+# создание таблицы для истории
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fio TEXT,
+    result TEXT,
+    date TEXT
+)
+''')
+CREATE TABLE users
+(
+	id_user char(18)  NOT NULL PRIMARY KEY ,
+	first_name char(18) not NULL ,
+	second_name char(18)  NOT NULL ,
+	age integer  NOT NULL ,
+    gender char(18)  NOT NULL,
+    dt_created date,
+    dtm_change date
+
+)
+
+CREATE TABLE authorization
+(
+	id_user char(18)  NOT NULL PRIMARY KEY ,
+	password char(18) NOT NULL ,
+  	dt_created date NOT NULL,
+  	dtm_change date
+)
+
+CREATE TABLE analysis_user
+(
+	id_user char(18)  NOT NULL PRIMARY KEY ,
+	result varchar(64) NOT NULL ,
+  	dt_created date NOT NULL,
+  	dtm_change date
+)
+
+               
+conn.commit()
+conn.close()
