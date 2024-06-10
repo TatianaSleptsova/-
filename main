@@ -51,11 +51,11 @@ tab_control.add(tab2, text='Вторая вкладка')
 
 # таблица с историей
 tree = ttk.Treeview(tab2)
-tree["columns"] = ("ФИО", "Результат", "Дата")
+tree["columns"] = ("ФИО", "Результат", "Дата исследования")
 tree.heading("#0", text="", anchor="w")
 tree.heading("ФИО", text="ФИО")
 tree.heading("Результат", text="Результат")
-tree.heading("Дата", text="Дата")
+tree.heading("Дата исследования", text="Дата")
 tree.pack()
 
 # кнопка "Выйти из учетной записи"
