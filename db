@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS history (
     date TEXT
 )
 ''')
+cursor.execute('''
 CREATE TABLE users
 (
 	id_user char(18)  NOT NULL PRIMARY KEY ,
@@ -21,7 +22,8 @@ CREATE TABLE users
     dtm_change date
 
 )
-
+''')
+cursor.execute('''
 CREATE TABLE authorization
 (
 	id_user char(18)  NOT NULL PRIMARY KEY ,
@@ -29,7 +31,8 @@ CREATE TABLE authorization
   	dt_created date NOT NULL,
   	dtm_change date
 )
-
+''')
+cursor.execute('''
 CREATE TABLE analysis_user
 (
 	id_user char(18)  NOT NULL PRIMARY KEY ,
@@ -37,7 +40,7 @@ CREATE TABLE analysis_user
   	dt_created date NOT NULL,
   	dtm_change date
 )
-
+''')
                
 conn.commit()
 conn.close()
